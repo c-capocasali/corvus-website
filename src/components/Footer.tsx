@@ -19,7 +19,7 @@ function Footer() {
 
   return (
     <footer className="footer-container">
-      <div className="footer-socials">
+      <div className="footer-icons">
         <YoutubeButton onClick={() => handleClick("Youtube")} />
         <GithubButton onClick={() => handleClick("Github")} />
         <InstagramButton onClick={() => handleClick("Instagram")} />
