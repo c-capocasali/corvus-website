@@ -1,6 +1,7 @@
 import GithubButton from "./GithubButton";
 import InstagramButton from "./InstagramButton";
 import YoutubeButton from "./YoutubeButton";
+import "./Footer.css";
 
 //TODO: Colocar os tipos em um arquivo específico
 type Plataform = "Youtube" | "Instagram" | "Github";
@@ -17,20 +18,14 @@ function Footer() {
   };
 
   return (
-    // bg-white = fundo branco
-    // flex justify-between = empurra itens para os lados
-    // p-4 = padding de 1rem
-    // border-t = linha no topo
-    <footer className="flex items-center justify-between bg-white p-4 border-t border-gray-200 w-full">
-      {/* gap-4 = espaço entre os botões */}
-      <div className="flex gap-4">
+    <footer className="footer-container">
+      <div className="footer-socials">
         <YoutubeButton onClick={() => handleClick("Youtube")} />
-        <InstagramButton onClick={() => handleClick("Instagram")} />
         <GithubButton onClick={() => handleClick("Github")} />
+        <InstagramButton onClick={() => handleClick("Instagram")} />
       </div>
 
-      {/* text-gray-700 = cor cinza escura */}
-      <div className="text-gray-700 text-sm font-sans">© 2026 CorvusAI</div>
+      <div className="footer-copyright">© 2026 CorvusAI</div>
     </footer>
   );
 }
