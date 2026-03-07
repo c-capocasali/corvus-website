@@ -1,0 +1,40 @@
+/* Container principal da NavBar */
+.navbar-container {
+    width: 100%;
+    height: 80px;
+    background-color: #fcfafaff;
+    display: flex;
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve para destacar do fundo */
+    position: sticky; /* Faz a barra grudar no topo ao rolar a página */
+    top: 0;
+    z-index: 1000;
+}
+
+/* Container interno que agrupa os botões */
+.navbar-div {
+    display: flex;
+    gap: 3rem; /* Espaçamento responsivo entre os botões */
+    align-items: center;
+}
+
+/* Estilização universal para todos os botões da NavBar */
+.navbar-div button {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition:
+        color 0.3s ease,
+        transform 0.2s ease;
+}
+
+/* Efeito de hover (quando passa o mouse) */
+.navbar-div button:hover {
+    transform: translateY(-2px); /* Efeito de "levantar" o botão */
+}
