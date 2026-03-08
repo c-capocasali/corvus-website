@@ -1,22 +1,42 @@
 /* Container principal da NavBar */
 .navbar-container {
     width: 100%;
-    height: 80px;
+    min-height: 80px; /* Trocamos height por min-height para permitir que cresça se os itens quebrarem de linha */
     background-color: #fcfafaff;
     display: flex;
-    justify-content: center; /* Centraliza os botões horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve para destacar do fundo */
-    position: sticky; /* Faz a barra grudar no topo ao rolar a página */
+    justify-content: space-between; /* Joga o logo pra esquerda e os botões pra direita */
+    align-items: center;
+    padding: 0 2rem; /* O espaçamento lateral agora fica no container, não no logo */
+    box-sizing: border-box; /* Garante que o padding não crie rolagem horizontal */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
     top: 0;
     z-index: 1000;
+    flex-wrap: wrap; /* Permite que os itens pulem de linha em telas muito pequenas */
+}
+
+/* Posiciona o logo sem tirá-lo do fluxo da página */
+.corvus-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Impede que o logo seja esmagado pela falta de espaço */
+}
+
+/* Logo responsivo */
+.corvus-logo img {
+    height: auto;
+    max-height: 50px; /* Define o tamanho máximo que você já usava */
+    width: auto;
+    max-width: 100vw; /* Garante que a imagem nunca ultrapasse a tela */
 }
 
 /* Container interno que agrupa os botões */
 .navbar-div {
     display: flex;
-    gap: 3rem; /* Espaçamento responsivo entre os botões */
+    gap: 2rem; /* Diminuí levemente o gap para caber melhor em telas menores */
     align-items: center;
+    flex-wrap: wrap; /* Se a tela for pequena, os botões quebram linha */
+    justify-content: center;
 }
 
 /* Estilização universal para todos os botões da NavBar */
@@ -24,17 +44,34 @@
     background: none;
     border: none;
     font-family: inherit;
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* Tamanho levemente ajustado */
     color: #333;
     cursor: pointer;
     font-weight: 600;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
     transition:
         color 0.3s ease,
         transform 0.2s ease;
 }
 
-/* Efeito de hover (quando passa o mouse) */
 .navbar-div button:hover {
-    transform: translateY(-2px); /* Efeito de "levantar" o botão */
+    transform: translateY(-2px);
+}
+
+/* --- Media Queries para Telas Menores (Celulares e Tablets) --- */
+@media (max-width: 768px) {
+    .navbar-container {
+        justify-content: center; /* Centraliza tudo em telas pequenas */
+        flex-direction: column; /* Coloca o logo em cima e botões embaixo */
+        padding: 1rem;
+        gap: 1rem; /* Espaço entre o logo e a linha de botões */
+    }
+
+    .navbar-div {
+        gap: 1rem; /* Aproxima mais os botões no celular */
+    }
+
+    .navbar-div button {
+        font-size: 0.9rem; /* Diminui a fonte para caber no celular */
+    }
 }
