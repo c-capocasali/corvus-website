@@ -1,16 +1,26 @@
 /* Container principal da NavBar */
+/* Container principal da NavBar */
 .navbar-container {
     width: 100%;
     min-height: 80px;
     background-color: #fcfafaff;
     display: flex;
-    justify-content: space-between;
+
+    /* 1. Mudamos para center: junta o logo e os botões no meio da tela */
+    justify-content: center;
+
+    /* 2. Adicionamos o gap: controla a distância exata entre o logo e o bloco de botões */
+    gap: 4rem;
+
     align-items: center;
     box-sizing: border-box;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    padding: 0 25%;
+
+    /* 3. Voltamos o padding para um valor normal, já que o center cuida das bordas */
+    padding: 0 2rem;
+
     z-index: 1000;
     flex-wrap: wrap;
 }
@@ -44,11 +54,11 @@
     background: none;
     border: none;
     font-family: inherit;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     color: #333;
     cursor: pointer;
-    font-weight: 600;
-    padding: 0.5rem 0.5rem;
+    font-weight: 540;
+    padding: 0.6rem 0.6rem;
     transition:
         color 0.3s ease,
         transform 0.2s ease;
