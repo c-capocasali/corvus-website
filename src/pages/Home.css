@@ -1,0 +1,71 @@
+/* Container principal que alinha as duas colunas lado a lado */
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    width: 100%;
+    height: 100%;
+    padding: 20rem;
+}
+
+.home-logo {
+    width: 300px;
+    height: 300px;
+    background-color: white; /* Cria aquele fundo branco circular do design */
+    border-radius: 50%; /* Transforma o fundo quadrado em um círculo perfeito */
+    object-fit: contain; /* Garante que o corvo não fique esmagado */
+    padding: 1.5rem; /* Dá um respiro entre o corvo e a borda do círculo */
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os textos à esquerda da própria caixa */
+    max-width: 550px; /* Força o texto a quebrar de linha igual no design */
+}
+
+.home-title {
+    color: #ffffff;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.home-text {
+    color: #f1ecec;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    margin-bottom: 2rem; /* Espaço entre o texto e o botão */
+}
+
+/* --- O Botão "Saiba mais" --- */
+.home-button {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff; /* Borda branca igual o design */
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #ffffff;
+    color: #000000; /* Inverte a cor */
+}
+
+/* --- Responsividade --- */
+@media (max-width: 900px) {
+    .home-container {
+        flex-direction: column;
+        text-align: center; /* Centraliza o texto no celular */
+    }
+
+    .home-content {
+        align-items: center; /* Centraliza o botão e título no celular */
+    }
+}
