@@ -35,7 +35,7 @@ function Projects() {
     {
       id: "1",
       title: "Tensor Processor Unit",
-      text: "PlaceHolder",
+      text: "PlaceHolder1",
       img: "PlaceHolder",
     },
     {
@@ -65,8 +65,8 @@ function Projects() {
       {corvusProjects.map((item) => (
         <ProjectItem
           key={item.id}
-          projectText={item.title}
-          projectTitle={item.text}
+          projectTitle={item.title}
+          projectText={item.text}
           imgUrl={item.img}
         />
       ))}
