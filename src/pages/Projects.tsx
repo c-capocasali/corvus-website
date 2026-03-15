@@ -1,3 +1,6 @@
+//Import das imagens usadas
+import corvusImg from "../images/Corvus.png";
+
 //Interfaces da Página
 interface ProjectItemProps {
   projectText: string;
@@ -18,13 +21,15 @@ const ProjectItem = ({
   imgUrl,
 }: ProjectItemProps) => {
   return (
-    <div className="project-wrapper">
-      <div className="project-description">
-        <div className="project-title">{projectTitle}</div>
-        <div className="project-text">{projectText}</div>
+    <div className="flex flex-col items-center text-center border border-white p-6 rounded-xl w-full h-full">
+      <div className="flex flex-col gap-4">
+        <div className="text-3xl font-bold">{projectTitle}</div>
+        <div className="text-sm text-zinc-400 leading-relaxe">
+          {projectText}
+        </div>
       </div>
 
-      <img src={imgUrl} alt="PlaceHolder"></img>
+      <img src={imgUrl} alt="Imagem do Projeto" className="w-32 h-32"></img>
     </div>
   );
 };
@@ -35,33 +40,33 @@ function Projects() {
     {
       id: "1",
       title: "Tensor Processor Unit",
-      text: "PlaceHolder1",
-      img: "PlaceHolder",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      img: corvusImg,
     },
     {
       id: "2",
       title: "Magnus Corvus",
-      text: "PlaceHolder",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
       img: "PlaceHolder",
     },
 
     {
       id: "3",
       title: "Reconhecimento de Imagens Falsa",
-      text: "PlaceHolder",
-      img: "PlaceHolder",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      img: "/images/Corvus.png",
     },
 
     {
       id: "4",
       title: "NLAF",
-      text: "PlaceHolder",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
       img: "PlaceHolder",
     },
   ];
 
   return (
-    <div className="projectContainer">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 p-10">
       {corvusProjects.map((item) => (
         <ProjectItem
           key={item.id}
