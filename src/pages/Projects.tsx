@@ -1,6 +1,8 @@
 //Import das imagens usadas
-import corvusImg from "../images/Corvus.png";
-
+import tpu_image from "../images/tpu_image.jpg";
+import nlaf_image from "../images/mlp_branco.png";
+import magnus_image from "../images/magnus-corvus.jpg";
+import fake_image from "../images/fake.jpg";
 //Interfaces da Página
 interface ProjectItemProps {
   projectText: string;
@@ -21,15 +23,14 @@ const ProjectItem = ({
   imgUrl,
 }: ProjectItemProps) => {
   return (
-    <div className="flex flex-col items-center text-center border border-white p-6 rounded-xl w-full h-full">
-      <div className="flex flex-col gap-4">
+    <div className="flex flex-col items-center text-justify border border-white p-6 rounded-xl w-full h-full">
+      <div className="flex flex-col gap-4 items-center">
         <div className="text-3xl font-bold">{projectTitle}</div>
-        <div className="text-sm text-zinc-400 leading-relaxe">
+        <img src={imgUrl} alt="Imagem do Projeto" className="w-50 h-32"></img>
+        <div className="text-sm text-zinc-300 leading-relaxed text-justify w-full">
           {projectText}
         </div>
       </div>
-
-      <img src={imgUrl} alt="Imagem do Projeto" className="w-32 h-32"></img>
     </div>
   );
 };
@@ -41,27 +42,27 @@ function Projects() {
       id: "1",
       title: "Tensor Processor Unit",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-      img: corvusImg,
+      img: tpu_image,
     },
     {
       id: "2",
       title: "Magnus Corvus",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-      img: "PlaceHolder",
+      img: magnus_image,
     },
 
     {
       id: "3",
-      title: "Reconhecimento de Imagens Falsa",
+      title: "Reconhecimento de Imagens Falsas",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-      img: "/images/Corvus.png",
+      img: fake_image,
     },
 
     {
       id: "4",
-      title: "NLAF",
+      title: "Nonlinear Additive Feature Engineering",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-      img: "PlaceHolder",
+      img: nlaf_image,
     },
   ];
 
