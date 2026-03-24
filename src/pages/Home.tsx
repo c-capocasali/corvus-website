@@ -1,17 +1,15 @@
 // src/pages/Home.tsx
 import Corvus from "../images/Corvus.png";
-import "./Home.css"; // Não esqueça de criar e importar este arquivo!
-
 function Home() {
   return (
-    <div className="home-container">
+    <div className="flex items-center">
       {/* Coluna da Esquerda: O Logo */}
-      <div className="home-logo-wrapper">
+      <div className="w-30 h-20">
         <img src={Corvus} alt="Logo Corvus AI" className="home-logo" />
       </div>
 
       {/* Coluna da Direita: Os Textos e o Botão */}
-      <div className="home-content">
+      <div className="items-center text-justify">
         <h1 className="home-title">CORVUS AI</h1>
         <p className="home-text">
           Grupo de Extensão do ICMC USP focado no desenvolvimento de projetos
