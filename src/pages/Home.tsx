@@ -1,6 +1,13 @@
 // src/pages/Home.tsx
 import Corvus from "../images/Corvus.png";
+import AboutUsButton from "../components/AboutUsButton";
+import { useNavigate } from "react-router-dom";
+
 function Home() {
+  const navigate = useNavigate();
+  const handleClick = (path: string) => {
+    navigate(path);
+  };
   return (
     <div className="flex items-center justify-center min-h-[70vh] gap-3">
       {/* Coluna da Esquerda: O Logo */}
@@ -15,7 +22,7 @@ function Home() {
           Grupo de Extensão do ICMC-USP focado no aprendizado e desenvolvimento
           de projetos utilizando Inteligência Artificial
         </p>
-        <button className="font-bold text-[23px]">Saiba mais</button>
+        <AboutUsButton onClick={() => handleClick("Sobre Nós")} />
       </div>
     </div>
   );
